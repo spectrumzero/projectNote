@@ -51,7 +51,7 @@ When selectors are combined they should be read from right to left. The selector
 ```
 
 
-## Box Mode
+## Box Model
 **demos:
 
 ![[boxmodel_1.png]]
