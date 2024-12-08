@@ -51,4 +51,49 @@ When selectors are combined they should be read from right to left. The selector
 ```
 
 
-## Box Model
+## Box Mode
+**demos:
+
+![[boxmodel_1.png]]
+
+![[boxmodel_0.png]]
+
+**terms:
+1. The `margin` property allows us to set the amount of space that surrounds an element. It can be used to help position elements in a particular place on a page or to provide breathing room, keeping all other elements a safe distance away.
+2. The `padding` property is used to provide spacing directly within an element.
+3. `border` falls between the padding and margin, providing an outline around an element. The `border` property requires three values: `width`, `style`, and `color`.
+4. The `border-radius` property accepts length units, including percentages and pixels, that identify the radius by which the corners of an element are to be rounded.
+5. The `box-sizing` property allows us to change exactly how the box model works and how an element’s size is calculated:
+```css
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* for compatibility */
+  box-sizing: border-box;
+}
+```
+6. the `border-box` value alters the box model so that any `border` or `padding` property values are included within the `width` and `height` of an element. If we add a `margin`, those values will need to be added to calculate the full box size.
+
+## Position
+Essentially, the `float` property allows us to take an element, remove it from the normal flow of a page, and [position it](http://www.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/) to the left or right of its parent element.
+
+clearfix:
+```css
+.container::before,
+.container::after {
+  content: "";
+  display: table;
+}
+
+.container::after {
+  clear: both;
+}
+
+.container {
+  clear: both;
+  zoom: 1;
+}
+```
+
