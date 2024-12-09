@@ -96,4 +96,113 @@ clearfix:
   zoom: 1;
 }
 ```
+## Forms
+### basics
+0. Forms are an essential part of the Internet, as they provide a way for websites to capture information from users and to process requests, and they offer controls for nearly every imaginable use of an application.
+1. One of the primary elements used to obtain text from users is the `<input>` element, a self-contained element. The `<input>` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input) uses the `type` attribute to define what type of information is to be captured within the control. Along with setting a `type` attribute, it is best practice to give an `<input>` element a `name` attribute as well. The `name` attribute value is used as the name of the control and is submitted along with the input data to the server:
+```html
+<input type="text" name="username">
+```
 
+2. Another element that’s used to capture text-based data is the `<textarea>` element. The `<textarea>` element differs from the `<input>` element in that it can accept larger passages of text spanning multiple lines. The `<textarea>` element also has start and end tags that can wrap plain text. Because the `<textarea>` element only accepts one type of value, the `type` attribute doesn’t apply here, but the `name` attribute is still used.
+```html
+<textarea name="comment">Add your comment here</textarea>
+```
+3. To create a drop-down list we’ll use the `<select>` and `<option>` elements. The `<select>` element wraps all of the menu options, and each menu option is marked up using the `<option>` element:
+```html
+<select name="day">
+  <option value="Friday" selected>Friday</option>
+  <option value="Saturday">Saturday</option>
+  <option value="Sunday">Sunday</option>
+</select>
+```
+### organizing Form Elements
+0. Labels provide captions or headings for form controls, unambiguously tying them together and creating an accessible form for all users and assistive technologies. Created using the `<label>` element, labels should include text that describes the inputs or controls they pertain to.
+1. The inline element `<label>` may includes a `for` attribute. The value of the `for` attribute should be the same as the value of the `id` attribute on the form control the label corresponds to:
+```html
+<label>
+  <input type="radio" name="day" value="Friday" checked> Friday
+</label>
+<label>
+  <input type="radio" name="day" value="Saturday"> Saturday
+</label>
+<label>
+  <input type="radio" name="day" value="Sunday"> Sunday
+</label>
+```
+
+```html
+<label for="username">Username</label>
+<input type="text" name="username" id="username">
+```
+2. The `<fieldset>` is a block-level element that wraps related elements, specifically within a `<form>` element, for better organization:
+```html
+<fieldset>
+  <label>
+    Username
+    <input type="text" name="username">
+  </label>
+  <label>
+    Password
+    <input type="text" name="password">
+  </label>
+</fieldset>
+```
+3. A `<legend>` provides a caption, or heading, for the `<fieldset>` element. The `<legend>` element wraps text describing the form controls that fall within the fieldset. The markup should include the `<legend>` element directly after the opening `<fieldset>` tag:
+```html
+<fieldset>
+  <legend>Login</legend>
+  <label>
+    Username
+    <input type="text" name="username">
+  </label>
+  <label>
+    Password
+    <input type="text" name="password">
+  </label>
+</fieldset>
+```
+## Semantic Table
+```html
+<table>
+  <caption>Design and Front-End Development Books</caption>
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Availability</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Don&#8217;t Make Me Think by Steve Krug</td>
+      <td>In Stock</td>
+      <td>1</td>
+      <td>$30.02</td>
+    </tr>
+    ...
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Subtotal</td>
+      <td></td>
+      <td></td>
+      <td>$135.36</td>
+    </tr>
+    <tr>
+      <td>Tax</td>
+      <td></td>
+      <td></td>
+      <td>$13.54</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td></td>
+      <td>$148.90</td>
+    </tr>
+  </tfoot>
+</table>
+```
+## [references](https://learn.shayhowe.com/html-css/writing-your-best-code/)
