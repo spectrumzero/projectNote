@@ -100,6 +100,7 @@ doc/**/*.pdf
 `git push origin serverfix:awesomebranch`
 `git push origin --delete awesomebranch`
 `git push origin main --set-upsteam`
+`git push origin HEAD~1:main --force`
 
 ### rebase
 `gir rebase -i HEAD~3`
