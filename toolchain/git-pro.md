@@ -23,6 +23,9 @@
 `git commit --amend`
 `git commit -a -m "skip git add"`
 
+
+### clone
+`git clone https://github.com/spectrumzero/webdevDemos.git -b quiz-app`
 ### rm
 `rm PROJECTS.md`
 `git rm PROJECTS.md`
